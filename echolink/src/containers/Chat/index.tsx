@@ -9,7 +9,8 @@ import * as actions from "./actions";
 import * as models from "./models";
 import logo from '../../images/logo.svg';
 import { Segment, Header, Form } from "semantic-ui-react";
-import { Redirect } from "react-router";
+import '../../styles/App.css';
+import '../../styles/index.css';
 
 interface OwnProps { }
 
@@ -35,22 +36,8 @@ export function mapDispatchToProps(dispatch: any) {
     };
 }
 
-export class App extends React.Component<Props> {
-    state = {
-        redirect: false
-      }
+export class Chat extends React.Component<Props> {
 
-      setRedirect = () => {
-        this.setState({
-          redirect: true
-        })
-      }
-
-      renderRedirect = () => {
-        if (this.state.redirect) {
-          return <Redirect to='/echolink/src/containers/Chat' />
-        }
-      }
     componentWillMount() { }
 
     render() {
@@ -58,16 +45,18 @@ export class App extends React.Component<Props> {
 
         return (
 
-            <div className="centered-form">
-                <div className="centered-form__box">
-                    <h1>Join Chat</h1>
-                    <form action="../Chat">
-                        <label>Display Name</label>
-                        <input type="text" name="username" placeholder="Display Name" required />
-                        <label>Room</label>
-                        <input type="text" name="room" placeholder="Room Name" required />
-                        <button>Join</button>
-                    </form>
+            <div className="chat">
+                <div id="sidebar" className="chat__sidebar">
+                </div>
+                <div className="chat__main">
+                    <div id="messages" className="chat__messages" />
+                    <div className="compose">
+                        <form id="message-form">
+                            <input name="message" placeholder="Message" required autoComplete="off" />
+                            <button>Send</button>
+                        </form>
+                        <button id="send-location">Send location</button>
+                    </div>
                 </div>
             </div>
         )
@@ -80,4 +69,4 @@ const withConnect = connect(
     mapDispatchToProps
 );
 
-export default App;
+export default Chat;
