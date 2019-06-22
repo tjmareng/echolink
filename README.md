@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/tjmareng/echolink/blob/master/echolink/public/images/logo.png?raw=true">
+  <a href="./echolink/public/images/logo.png">
     <img
       alt="Echolink"
       src="./images"
@@ -7,6 +7,8 @@
     />
   </a>
 </p>
+![Alt text](./echolink/public/images/logo.png?raw=true)
+
 # EchoLink
 Chat Application Service
 
