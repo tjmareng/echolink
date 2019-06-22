@@ -83,14 +83,14 @@ export class UserForm extends React.Component<Props> {
                         component={this.renderInput}
                         label="Display Name"
                         name="displayName"
-                        placeholder="Display Name"
+                        placeholder="Display Name (i.e. John)"
                         rows={1}
                     />
                     <Field
                         component={this.renderInput}
                         label="Room"
                         name="roomName"
-                        placeholder="Room Name"
+                        placeholder="Room Name (i.e. Room)"
                         rows={1}
                     />
 

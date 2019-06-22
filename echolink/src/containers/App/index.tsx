@@ -8,7 +8,7 @@ import * as selectors from "./selectors";
 import * as actions from "./actions";
 import * as models from "./models";
 import logo from '../../images/logo.svg';
-import { Segment, Header, Form, Divider, Container, Label, FormField, Image } from "semantic-ui-react";
+import { Segment, Header, Form, Divider, Container, Label, FormField, Image, Icon } from "semantic-ui-react";
 import { Redirect } from "react-router";
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom';
 import { Field, reduxForm } from "redux-form";
@@ -69,7 +69,7 @@ export class App extends React.Component<Props> {
                 <div>
                     <div className="centered-form">
                         <div className="centered-form__box">
-                            <h1>Join Chat</h1>
+                            <h1>Join Chat <Icon name="chat" /></h1>
                             <UserForm dispatch={dispatch} />
                         </div>
                     </div>
