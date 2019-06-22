@@ -12,11 +12,24 @@
 </p>
 
 # EchoLink
-Chat Application Service
+
+[EchoLink](https://echolink-chat.herokuapp.com/) is a chat service developed using React/Redux, Nodejs, and Socket.io. This application is built and ran by Heroku. The purpose of this application is to allow users to choose a temporary username and chat room where they can converse or play games provided by the chat bot, Cassy (coming soon).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-https://echolink-chat.herokuapp.com/
+## Demo
+
+[Click Here](https://echolink-chat.herokuapp.com/)
+
+# Overview
+
+[Organization](https://github.com/tjmareng/echolink#organization)
+[Screenshots](https://github.com/tjmareng/echolink#screenshots)
+[Development](https://github.com/tjmareng/echolink#development)
+
+# Organization
+# Screenshots
+# Development
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
