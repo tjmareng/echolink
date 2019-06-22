@@ -2,7 +2,7 @@
   <a href="https://echolink-chat.herokuapp.com/">
     <img
       alt="Echolink"
-      src="./echolink/public/images/logo.png"
+      src="./echolink/public/images/favicon.ico"
       width="400"
     />
   </a>
