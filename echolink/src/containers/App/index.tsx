@@ -13,9 +13,8 @@ import { Redirect } from "react-router";
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom';
 import { Field, reduxForm } from "redux-form";
 import UserForm from "./UserForm";
-import Logo from "components/Logo";
 
-interface OwnProps { }
+interface OwnProps { };
 
 type DispatchProps = {
     dispatch: Dispatch<any>;
@@ -68,7 +67,6 @@ export class App extends React.Component<Props> {
         return (
             <div>
                 <div>
-                    <Logo />
                     <div className="centered-form">
                         <div className="centered-form__box">
                             <h1>Join Chat</h1>
