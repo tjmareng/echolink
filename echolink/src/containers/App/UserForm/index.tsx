@@ -9,7 +9,7 @@ interface OwnProps {
 }
 
 const mapStateToProps = (state: any) => {
-    // return state.form.user
+    // return state.form
     //     ? {
     //         values: state.form.user.values,
     //         submitSucceeded: state.form.user.submitSucceeded
@@ -32,9 +32,9 @@ export class UserForm extends React.Component<Props> {
 
     render() {
         return (
-            <Segment basic textAlign="center" vertical>
+             <Segment basic textAlign="center" vertical>
                 <NewUserForm />
-                {/* Displays Form Data */}
+               {/* Displays Form Data */}
                 <Message>
                     <Message.Header>Form data:</Message.Header>
                     <pre>{JSON.stringify(this.props, null, 2)}</pre>

@@ -5,7 +5,7 @@ import Chat from './containers/Chat/route';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from './reducers';
+import createRootReducer from './reducers';
 import loggerMiddleware from './middleware/logger';
 import monitorReducerEnhancer from './enhancers/monitorReducer';
 import thunkMiddleware from 'redux-thunk';
@@ -13,7 +13,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom';
 
-const store = createStore(rootReducer)
+const reducer = createRootReducer();
+const store = createStore(reducer);
 const middlewareEnhancer = applyMiddleware(loggerMiddleware, thunkMiddleware)
 const composedEnhancers = compose(
   middlewareEnhancer,

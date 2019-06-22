@@ -1,7 +1,7 @@
 import appReducer from 'containers/App/reducer';
+import chatReducer from 'containers/Chat/reducer';
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-
 export interface State {
     app?: any;
     [container: string]: any;
@@ -9,16 +9,15 @@ export interface State {
 
 const globalReducers = {
     app: appReducer,
+    chat: chatReducer,
     form: formReducer,
 };
 
-function createReducer(injectedReducers?: any) {
+function createRootReducer() {
     const reducers = {
         ...globalReducers,
-        ...injectedReducers,
     }
-
     return combineReducers(reducers);
 }
 
-export default createReducer;
+export default createRootReducer;

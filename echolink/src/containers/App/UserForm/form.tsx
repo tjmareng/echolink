@@ -55,8 +55,6 @@ export class NewUserForm extends React.Component<Props> {
         return (
             <Form size={"large"}>
 
-
-
                 <Field
                     component={this.renderInput}
                     label="Display Name"
