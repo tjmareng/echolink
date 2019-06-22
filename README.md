@@ -12,14 +12,46 @@
 </p>
 
 # EchoLink
-Chat Application Service
+
+[EchoLink](https://echolink-chat.herokuapp.com/) is a chat service developed using React/Redux, Nodejs, and Socket.io. This application is built and ran by Heroku. The purpose of this application is to allow users to choose a temporary username and chat room where they can converse or play games provided by the chat bot, Cassy (coming soon).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-https://echolink-chat.herokuapp.com/
-## Getting Started
+## Demo
+
+[Click Here](https://echolink-chat.herokuapp.com/)
+
+# Overview
+
+[Organization](https://github.com/tjmareng/echolink#organization)
+
+[Screenshots](https://github.com/tjmareng/echolink#screenshots)
+
+[Development](https://github.com/tjmareng/echolink#development)
+
+# Organization
+
+### echolink
+`echolink/` will be the root directory once I finish converting the application into a React/Redux application.
+
+### json
+`json/config.json` is where the config settings are being held.
+
+### public
+`public/css/` is where you will find the styling. `public/images/` is where you can find all images. `public/index.html` and `public/chat.html` hold the html pages for the application.
+
+### src
+`src/` is where you will find the server and utilities used to create the chat application. `src/commands/` will hold all of the bot commands once they are implemented.
+
+# Screenshots
+
+Coming Soon
+
+# Development
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+## Getting Started
 
 Clone the project, change into the directory, and install the dependencies:
 
