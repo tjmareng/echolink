@@ -1,14 +1,12 @@
 <p align="center">
-  <a href="/echolink/public/images/logo.png">
+  <a href="https://echolink-chat.herokuapp.com/">
     <img
       alt="Echolink"
-      src="./images"
+      src="https://raw.github.com/tjmareng/echolink/master/echolink/public/images/logo.png?raw=true"
       width="400"
     />
   </a>
 </p>
-![Alt text](/echolink/public/images/logo.png?raw=true)
-
 # EchoLink
 Chat Application Service
 
