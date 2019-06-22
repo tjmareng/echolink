@@ -7,7 +7,7 @@
     />
   </a>
 </p>
-|<a href='https://reactjs.org/'><img src='./echolink/public/images/react.svg' height='90' alt='React Logo'/></a>|<a href='http://redux.js.org'><img src='./echolink/public/images/redux.svg' height='90' alt='Redux Logo'/></a>|<a href='https://nodejs.org/en/'><img src='./echolink/public/images/nodejs.svg' height='90' alt='Nodejs Logo'/></a>|<a href='https://socket.io/'><img src='./echolink/public/images/socketio.svg' height='90' alt='Socketio Logo'/></a>|
+|<a href='https://reactjs.org/'><img src='./echolink/public/images/react.svg' height='80' alt='React Logo'/></a>|<a href='http://redux.js.org'><img src='./echolink/public/images/redux.svg' height='80' alt='Redux Logo'/></a>|<a href='https://nodejs.org/en/'><img src='./echolink/public/images/nodejs.svg' height='80' alt='Nodejs Logo'/></a>|<a href='https://socket.io/'><img src='./echolink/public/images/socketio.svg' height='80' alt='Socketio Logo'/></a>|
 |---|---|---|---|
 # EchoLink
 Chat Application Service
