@@ -47,6 +47,9 @@ export class Chat extends React.Component<Props> {
 
             <div className="chat">
                 <div id="sidebar" className="chat__sidebar">
+                    {/* <div id="cassy" className="cassybot">
+                        <img className="img-valign" id="title_pic" src="./img/favicon.png" width={120} height={120} />
+                    </div> */}
                 </div>
                 <div className="chat__main">
                     <div id="messages" className="chat__messages" />

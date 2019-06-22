@@ -3,7 +3,8 @@ import * as models from "./models";
 import * as actions from "./actions";
 
 export const initialState: models.AppState = {
-    message: ''
+    message: '',
+    users: []
 };
 
 const appReducer = reducerWithInitialState(initialState)
