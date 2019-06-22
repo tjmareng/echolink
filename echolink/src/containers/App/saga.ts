@@ -12,6 +12,22 @@ export function* watchForMessages() {
     yield takeEvery(actions.message, handleMessage);
 }
 
+export function* watchForAddingUsers() {
+    yield takeEvery(actions.addUser, addUser);
+}
+
+export function* watchForRemovingUsers() {
+    yield takeEvery(actions.removeUser, removeUser);
+}
+
+export function* watchForRedirects() {
+    yield takeEvery(actions.redirect, redirect);
+}
+
+export function* redirect(action: Action<string>) {
+    yield put(actions.redirect)
+}
+
 export function* handleMessage(action: Action<string>) {
     yield put(actions.message('blank'));
 }
@@ -50,9 +66,9 @@ export function* addUser(action: Action<models.User>) {
     // Store user
     const user: models.User = { id, username, room };
     users.push(user);
-    return { user };
+    //return { user };
 
-    yield put(actions.message('blank'));
+    yield put(actions.redirect);
 }
 
 export function* removeUser(action: Action<models.User>) {
@@ -69,7 +85,7 @@ export function* removeUser(action: Action<models.User>) {
 }
 
 export default function* rootSaga() {
-    
+
     let welcomeMessage = 'Welcome!'
 
     yield all([

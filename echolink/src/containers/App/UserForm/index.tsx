@@ -1,49 +1,132 @@
 import React from "react";
+import { Field, reduxForm } from "redux-form";
+import { Message, Button, Segment, FormTextArea, Form, Container } from "semantic-ui-react";
+import { compose } from "redux";
 import { connect } from "react-redux";
-import { Modal, Button, Segment, Message } from "semantic-ui-react";
-import NewUserForm from "./form";
-
+import * as actions from 'containers/App/actions';
+import * as models from 'containers/App/models';
 interface OwnProps {
-    displayName: String;
-    roomName: String;
+    dispatch: any;
 }
 
-const mapStateToProps = (state: any) => {
-    // return state.form
-    //     ? {
-    //         values: state.form.user.values,
-    //         submitSucceeded: state.form.user.submitSucceeded
-    //     }
-    //     : {
-    //         values: {
-    //             displayName: '',
-    //             roomName: ''
-    //         }
-    //     };
-    return {};
+type StateProps = {
+    values: {
+        displayName: String;
+        roomName: String;
+    }
 };
 
-type Props = OwnProps;
+const mapStateToProps = (state: any) => {
+    return state.form.user
+        ? {
+            values: state.form.user.values,
+            submitSucceeded: state.form.user.submitSucceeded
+        }
+        : {
+            values: {
+                displayName: '',
+                roomName: ''
+            }
+        };
+};
+
+type Props = OwnProps & StateProps;
 
 export class UserForm extends React.Component<Props> {
-    state = {
+    renderInput = (field: any) => (
+        <Form.Input
+            {...field.input}
+            required
+            label={field.label}
+            placeholder={field.placeholder}
+            rows={field.rows} />
+    );
 
-    };
+    renderSelect = (field: any) => (
+        <Form.Select
+            label={field.label}
+            name={field.input.name}
+            onChange={(e, { value }) => field.input.onChange(value)}
+            options={field.options}
+            placeholder={field.placeholder}
+            value={field.input.value}
+        />
+    );
+
+    renderTextArea = (field: any) => (
+        <Form.TextArea
+            {...field.input}
+            required
+            label={field.label}
+            placeholder={field.placeholder}
+            rows={field.rows} />
+    );
+
+
+    close = () => this.setState({ open: false });
 
     render() {
-        return (
-             <Segment basic textAlign="center" vertical>
-                <NewUserForm />
-               {/* Displays Form Data */}
-                <Message>
-                    <Message.Header>Form data:</Message.Header>
-                    <pre>{JSON.stringify(this.props, null, 2)}</pre>
-                </Message>
-            </Segment>
+        const { dispatch } = this.props;
 
+        let userInfo: models.User = {
+            id: 1,
+            username: '',
+            room: ''
+        }
+
+        return (
+            <Container>
+
+                <Form size={"large"}>
+
+                    <Field
+                        component={this.renderInput}
+                        label="Display Name"
+                        name="displayName"
+                        placeholder="Display Name"
+                        rows={1}
+                    />
+                    <Field
+                        component={this.renderInput}
+                        label="Room"
+                        name="roomName"
+                        placeholder="Room Name"
+                        rows={1}
+                    />
+
+                    <button
+                        onClick={() => {
+                            if (this.props.values !== null && this.props.values !== undefined) {
+                                let userInfo: models.User = {
+                                    id: 1,
+                                    username: this.props.values.displayName,
+                                    room: this.props.values.roomName
+                                }
+                                dispatch(actions.addUser(userInfo))
+                            }
+                        }}
+                    >Join</button>
+                </Form>
+
+                {/* Debug Tool -- Displays Form Data */}
+                {/* <Message>
+                    <Message.Header>Form:</Message.Header>
+                    <pre>{JSON.stringify(this.props.values, null, 2)}</pre>
+                </Message> */}
+            </Container>
         );
     }
 }
 
-export default connect(mapStateToProps)(NewUserForm);
-//export default UserForm;
+const withConnect = connect(mapStateToProps);
+
+const withForm = reduxForm({
+    form: "user"
+});
+
+const composed = compose(
+    withForm,
+    withConnect
+)(UserForm);
+
+export default composed as React.ComponentClass<OwnProps>;

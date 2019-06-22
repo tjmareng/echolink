@@ -21,14 +21,14 @@ type DispatchProps = {
 };
 
 type StateProps = {
-    messages: String;
+    //messages: String;
 };
 
-type Props = OwnProps;
+type Props = OwnProps & DispatchProps;
 
 export function mapStateToProps(state: models.AppState): StateProps {
     return {
-        messages: selectors.selectMessages(state)
+        //messages: selectors.selectMessages(state)
     };
 }
 
@@ -62,7 +62,7 @@ export class App extends React.Component<Props> {
     componentWillMount() { }
 
     render() {
-        //const { dispatch } = this.props;
+        const { dispatch } = this.props;
 
         return (
             <div>
@@ -70,13 +70,13 @@ export class App extends React.Component<Props> {
                     <div className="centered-form">
                         <div className="centered-form__box">
                             <h1>Join Chat</h1>
-                            <UserForm />
+                            <UserForm dispatch={dispatch} />
                         </div>
                     </div>
 
                 </div>
 
-                <div className="centered-form">
+                {/* <div className="centered-form">
                     <div className="centered-form__box">
                         <h1>Join Chat</h1>
                         <form action="../Chat">
@@ -92,7 +92,7 @@ export class App extends React.Component<Props> {
                             <Link to='/Chat'>Goto Page One</Link>
                         </form>
                     </div>
-                </div>
+                </div> */}
             </div>
 
         )
@@ -105,4 +105,4 @@ const withConnect = connect(
     mapDispatchToProps
 );
 
-export default App;
+export default (withConnect)(App);
