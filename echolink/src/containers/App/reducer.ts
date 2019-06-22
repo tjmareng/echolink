@@ -12,6 +12,10 @@ const appReducer = reducerWithInitialState(initialState)
         ...state,
         message: ''
     }))
+    .case(actions.addUser, (state, payload) => ({
+        ...state,
+        users: state.users.concat(payload)
+    }))
 
 
 export default appReducer;

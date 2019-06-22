@@ -44,7 +44,6 @@ export class Chat extends React.Component<Props> {
         //const { dispatch } = this.props;
 
         return (
-
             <div className="chat">
                 <div id="sidebar" className="chat__sidebar">
                     {/* <div id="cassy" className="cassybot">
@@ -62,6 +61,8 @@ export class Chat extends React.Component<Props> {
                     </div>
                 </div>
             </div>
+
+
         )
     }
 
