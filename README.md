@@ -24,15 +24,34 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Overview
 
 [Organization](https://github.com/tjmareng/echolink#organization)
+
 [Screenshots](https://github.com/tjmareng/echolink#screenshots)
+
 [Development](https://github.com/tjmareng/echolink#development)
 
 # Organization
+
+### echolink
+`echolink/` will be the root directory once I finish converting the application into a React/Redux application.
+
+### json
+`json/config.json` is where the config settings are being held.
+
+### public
+`public/css/` is where you will find the styling. `public/images/` is where you can find all images. `public/index.html` and `public/chat.html` hold the html pages for the application.
+
+### src
+`src/` is where you will find the server and utilities used to create the chat application. `src/commands/` will hold all of the bot commands once they are implemented.
+
 # Screenshots
+
+Coming Soon
+
 # Development
-## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+## Getting Started
 
 Clone the project, change into the directory, and install the dependencies:
 
