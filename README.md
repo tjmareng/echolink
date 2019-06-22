@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/tjmareng/echolink/blob/master/echolink/public/images/logo.png">
+  <a href="https://github.com/tjmareng/echolink/echolink/public/images/logo.png">
     <img
       alt="Echolink"
       src="./images"
